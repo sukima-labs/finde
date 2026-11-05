@@ -20,7 +20,7 @@ from pathlib import Path
 
 RAIZ = Path(__file__).resolve().parent.parent
 CACHE = RAIZ / "herramientas" / "cache"
-UA = "jirulabs-finde/0.1 (+https://jirulabs.com)"
+UA = "sukima-finde/0.1 (+https://github.com/sukima-labs/finde)"
 VALHALLA = "https://valhalla1.openstreetmap.de"
 NE = "https://raw.githubusercontent.com/nvkelso/natural-earth-vector/master/geojson/ne_50m_admin_0_countries.geojson"
 
