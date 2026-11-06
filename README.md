@@ -84,5 +84,5 @@ chrome --headless --window-size=1200,630 --virtual-time-budget=5000 \
 
 ## Licencias
 
-Código bajo MIT (`LICENSE`). Los datos de carreteras derivan de OpenStreetMap
+Código © 2026 nyakojiru, bajo MIT (`LICENSE`). Los datos de carreteras derivan de OpenStreetMap
 (© colaboradores de OpenStreetMap, [ODbL](https://www.openstreetmap.org/copyright)).
