@@ -215,3 +215,9 @@ td.tarde{color:var(--mal);font-weight:600}
 /* Litera: lo que se LEE va en Georgia; la interfaz, en la letra del sistema */
 .lede,.portada,.ayuda,.ver,.ventajas li,.partido-txt,.res-ver,.pie p,.veredicto span,.sug-tit{font-family:var(--f-lectura)}
 .lede{font-size:18px;line-height:1.55}
+
+/* Bloque institucional Sukima Labs */
+.sukima{display:flex;gap:10px;align-items:center;margin-top:12px}
+.sukima .iso{width:24px;height:24px;flex:none}
+.sukima p{font-size:13px;margin:0;color:var(--muted)}
+.sukima a{color:var(--via-claro)}
