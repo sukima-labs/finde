@@ -127,9 +127,9 @@ for idioma, destino in (("es", "docs/index.html"), ("en", "docs/en/index.html"))
     '<?xml version="1.0" encoding="UTF-8"?>\n'
     '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">\n'
     + "".join(f'  <url><loc>{u}</loc>'
-              '<xhtml:link rel="alternate" hreflang="es" href="https://sukima-labs.github.io/finde/"/>'
-              '<xhtml:link rel="alternate" hreflang="en" href="https://sukima-labs.github.io/finde/en/"/></url>\n'
-              for u in ("https://sukima-labs.github.io/finde/", "https://sukima-labs.github.io/finde/en/"))
+              '<xhtml:link rel="alternate" hreflang="es" href="https://sukimalabs.com/finde/"/>'
+              '<xhtml:link rel="alternate" hreflang="en" href="https://sukimalabs.com/finde/en/"/></url>\n'
+              for u in ("https://sukimalabs.com/finde/", "https://sukimalabs.com/finde/en/"))
     + "</urlset>\n")
 print(f"docs/: datos.json ({(RAIZ / 'docs/datos.json').stat().st_size // 1024} KB), "
       f"catalogo.json ({(RAIZ / 'docs/catalogo.json').stat().st_size // 1024} KB), index.html, en/index.html, sitemap.xml · "
