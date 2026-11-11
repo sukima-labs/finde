@@ -11,7 +11,7 @@
     "title": "Finde · Conoce casi toda España en escapadas de fin de semana desde Madrid",
     "description": "Rutas de sábado a domingo desde Madrid, en coche o en tren y coche de alquiler: {n_circuitos} circuitos listos y cerca de doscientos lugares. Elige ciudades, ajusta el tiempo en cada una y comprueba si llegas a casa el domingo.",
     "og_description": "{n_circuitos} rutas listas, en coche o en tren hasta Galicia, Barcelona o Málaga. Sales el sábado, vuelves el domingo y la página te dice si llegas.",
-    "jl_href": "https://github.com/sukima-labs",
+    "jl_href": "https://sukimalabs.com",
     "h1": "Conoce casi toda España desde Madrid, un fin de semana cada vez",
     "lede": "Sales el sábado por la mañana, duermes fuera una noche y el domingo por la noche estás en casa. Elige una ruta o arma la tuya: la página calcula el plan hora a hora y te dice si llegas.",
     "t_circ": "1 · Elige un circuito",
@@ -61,7 +61,8 @@
     "aria_modo": "Cómo vas",
     "modo_coche": "🚗 En coche desde Madrid",
     "modo_tren": "🚄 Tren + coche de alquiler",
-    "estacion": "Tren hasta"
+    "estacion": "Tren hasta",
+    "sukima_contacto": "Un proyecto de <a href=\"https://sukimalabs.com\">Sukima Labs</a> — <a href=\"mailto:hola@sukimalabs.com\">hola@sukimalabs.com</a> para felicitarnos o hablar con los fundadores · <a href=\"mailto:info@sukimalabs.com\">info@sukimalabs.com</a> para preguntas, quejas y asuntos administrativos."
   },
   "en": {
     "lang": "en",
@@ -74,7 +75,7 @@
     "title": "Finde · See most of Spain on weekend road trips from Madrid",
     "description": "Saturday-to-Sunday trips from Madrid, by car or by train and hire car: {n_circuitos} ready-made circuits and nearly two hundred places. Pick the cities, set the time in each one and check that you are home on Sunday.",
     "og_description": "{n_circuitos} ready-made routes, by car or by train to Galicia, Barcelona or Málaga. Leave on Saturday, come back on Sunday, and the page tells you if it fits.",
-    "jl_href": "https://github.com/sukima-labs",
+    "jl_href": "https://sukimalabs.com",
     "h1": "See most of Spain from Madrid, one weekend at a time",
     "lede": "Leave on Saturday morning, spend one night away and be home on Sunday night. Pick a route or build your own: the page works out the plan hour by hour and tells you whether it fits.",
     "t_circ": "1 · Pick a circuit",
@@ -124,6 +125,7 @@
     "aria_modo": "How you travel",
     "modo_coche": "🚗 By car from Madrid",
     "modo_tren": "🚄 Train + hire car",
-    "estacion": "Train to"
+    "estacion": "Train to",
+    "sukima_contacto": "A project by <a href=\"https://sukimalabs.com\">Sukima Labs</a> — <a href=\"mailto:hola@sukimalabs.com\">hola@sukimalabs.com</a> to congratulate us or reach the founders · <a href=\"mailto:info@sukimalabs.com\">info@sukimalabs.com</a> for questions, complaints and administrative matters."
   }
 }
