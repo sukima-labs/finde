@@ -221,3 +221,6 @@ td.tarde{color:var(--mal);font-weight:600}
 .sukima .iso{width:24px;height:24px;flex:none}
 .sukima p{font-size:13px;margin:0;color:var(--muted)}
 .sukima a{color:var(--via-claro)}
+
+/* Isotipo de marca en la cabecera (adaptado al tema por currentColor) */
+.marca .iso{width:22px;height:22px;vertical-align:-4px;margin-right:8px}
