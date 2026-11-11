@@ -113,7 +113,7 @@ def compacta(v):
     ensure_ascii=False, separators=(",", ":")))
 
 # Los textos con HTML a propósito (llevan etiquetas) van tal cual; el resto se escapa.
-CON_HTML = {"pie_calculo", "pie_peajes", "creditos"}
+CON_HTML = {"pie_calculo", "pie_peajes", "creditos", "sukima_contacto"}
 # {n_circuitos} en un texto = cuántos hay de verdad (26-10-2026: la portada decía «diecisiete» con 19).
 N_CIRC = str(len(salida["circuitos"]))
 for idioma, destino in (("es", "docs/index.html"), ("en", "docs/en/index.html")):

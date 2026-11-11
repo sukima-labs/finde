@@ -22,7 +22,7 @@
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="../favicon.svg" type="image/svg+xml">
 <link rel="preload" href="../datos.json" as="fetch" crossorigin>
-<link rel="stylesheet" href="../estilo.css">
+<link rel="stylesheet" href="../estilo.css?v=2">
 <script type="module" src="../app.js"></script>
 </head>
 <body>
@@ -30,7 +30,7 @@
 <div class="wrap">
   <header class="cab">
     <div>
-      <p class="marca"><svg class="iso" viewBox="0 0 200 200" aria-hidden="true" focusable="false"><path d="M 18 174 L 18 38 L 180 14 L 180 174 L 160 174 L 160 39 L 38 57 L 38 174 Z" fill="currentColor"/><path d="M 52 170 L 52 80 L 142 59 L 142 79 L 72 96 L 72 170 Z" fill="currentColor"/><path d="M 96 167 L 96 109 L 143 93 L 143 173 Z" fill="#14C6D4"/></svg> <a href="https://sukimalabs.com" class="jl">Finde · Sukima Labs</a>
+      <p class="marca"><svg class="iso" width="22" height="22" viewBox="0 0 200 200" aria-hidden="true" focusable="false"><path d="M 18 174 L 18 38 L 180 14 L 180 174 L 160 174 L 160 39 L 38 57 L 38 174 Z" fill="currentColor"/><path d="M 52 170 L 52 80 L 142 59 L 142 79 L 72 96 L 72 170 Z" fill="currentColor"/><path d="M 96 167 L 96 109 L 143 93 L 143 173 Z" fill="#14C6D4"/></svg> <a href="https://sukimalabs.com" class="jl">Finde · Sukima Labs</a>
         <a href="../" class="idioma" id="idioma" hreflang="es" lang="es">Español</a></p>
       <p class="kicker">Saturday-to-Sunday trips, by car or by train</p>
       <h1>See most of Spain from Madrid, one weekend at a time</h1>
@@ -119,13 +119,16 @@
   </section>
 
   <footer class="pie" id="pie">
-    <p><strong>How it is calculated.</strong> Driving times come from the Valhalla route planner on OpenStreetMap data, without traffic. Each leg gets 15 min added to get into town and park, plus 15 min for every 2 h of continuous driving, the break recommended by Spain's traffic authority (DGT). You set the time in each city; the default is what it usually takes to see the essentials on foot. In the city where you sleep, that time is split between Saturday afternoon and Sunday morning.</p>
-    <p><strong>Tolls.</strong> The page shows the kilometres on toll roads according to OpenStreetMap and how much time it costs to avoid them; the price is not calculated because it depends on the stretch and the time of day. With “Avoid tolls” the whole plan is recalculated on the free alternative.</p>
-    <p id="pie-combustible"></p>
-    <p id="pie-tren"></p>
-    <p id="fuera"></p>
+    <details class="como">
+      <summary>how it works: calculation, tolls, fuel and train</summary>
+      <p><strong>How it is calculated.</strong> Driving times come from the Valhalla route planner on OpenStreetMap data, without traffic. Each leg gets 15 min added to get into town and park, plus 15 min for every 2 h of continuous driving, the break recommended by Spain's traffic authority (DGT). You set the time in each city; the default is what it usually takes to see the essentials on foot. In the city where you sleep, that time is split between Saturday afternoon and Sunday morning.</p>
+      <p><strong>Tolls.</strong> The page shows the kilometres on toll roads according to OpenStreetMap and how much time it costs to avoid them; the price is not calculated because it depends on the stretch and the time of day. With “Avoid tolls” the whole plan is recalculated on the free alternative.</p>
+      <p id="pie-combustible"></p>
+      <p id="pie-tren"></p>
+      <p id="fuera"></p>
+    </details>
     
-  <div class="sukima"><svg class="iso" viewBox="0 0 200 200" aria-hidden="true" focusable="false"><path d="M 18 174 L 18 38 L 180 14 L 180 174 L 160 174 L 160 39 L 38 57 L 38 174 Z" fill="#10131C"/><path d="M 52 170 L 52 80 L 142 59 L 142 79 L 72 96 L 72 170 Z" fill="#10131C"/><path d="M 96 167 L 96 109 L 143 93 L 143 173 Z" fill="#14C6D4"/></svg><p>A project by &lt;a href=&quot;https://sukimalabs.com&quot;&gt;Sukima Labs&lt;/a&gt; — &lt;a href=&quot;mailto:hola@sukimalabs.com&quot;&gt;hola@sukimalabs.com&lt;/a&gt; to congratulate us or reach the founders · &lt;a href=&quot;mailto:info@sukimalabs.com&quot;&gt;info@sukimalabs.com&lt;/a&gt; for questions, complaints and administrative matters.</p></div>
+  <div class="sukima"><svg class="iso" width="24" height="24" viewBox="0 0 200 200" aria-hidden="true" focusable="false"><path d="M 18 174 L 18 38 L 180 14 L 180 174 L 160 174 L 160 39 L 38 57 L 38 174 Z" fill="#10131C"/><path d="M 52 170 L 52 80 L 142 59 L 142 79 L 72 96 L 72 170 Z" fill="#10131C"/><path d="M 96 167 L 96 109 L 143 93 L 143 173 Z" fill="#14C6D4"/></svg><p>A project by <a href="https://sukimalabs.com">Sukima Labs</a> — <a href="mailto:hola@sukimalabs.com">hola@sukimalabs.com</a> to congratulate us or reach the founders · <a href="mailto:info@sukimalabs.com">info@sukimalabs.com</a> for questions, complaints and administrative matters.</p></div>
     <p class="creditos">Road data © <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, routes by <a href="https://valhalla.github.io/valhalla/">Valhalla</a> (FOSSGIS server), city centres from <a href="https://www.wikidata.org">Wikidata</a>, outline from <a href="https://www.naturalearthdata.com">Natural Earth</a>, train timetables from <a href="https://data.renfe.com">Renfe</a> (open data). This page uses no cookies or analytics and makes no requests outside this site. <span id="generado"></span> · <a href="https://github.com/sukima-labs/finde">Code and data</a> · Made by <a href="https://github.com/sukima-labs">sukima-labs</a>.</p>
   </footer>
 </div>

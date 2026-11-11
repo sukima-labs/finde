@@ -224,3 +224,12 @@ td.tarde{color:var(--mal);font-weight:600}
 
 /* Isotipo de marca en la cabecera (adaptado al tema por currentColor) */
 .marca .iso{width:22px;height:22px;vertical-align:-4px;margin-right:8px}
+
+/* Desplegable de cómo funciona */
+.pie .como{margin:8px 0}
+.pie .como summary{cursor:pointer;color:var(--via-claro);font-size:13.5px;text-decoration:underline;text-underline-offset:3px;list-style:none}
+.pie .como summary::-webkit-details-marker{display:none}
+.pie .como summary::before{content:"▸ "}
+.pie .como[open] summary::before{content:"▾ "}
+.pie .como[open]{border-top:1.5px solid var(--line);border-bottom:1.5px solid var(--line);padding:6px 0}
+.pie .sukima{margin:12px 0}
