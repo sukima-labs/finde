@@ -39,7 +39,8 @@ h1{font:500 clamp(30px,5vw,46px)/1.1 var(--f-rotulo);margin:0;letter-spacing:-.0
 
 /* Circuitos */
 .circuitos{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(230px,calc(50% - 5px)),1fr));gap:10px}
-.circ{display:grid;gap:4px;text-align:left;background:var(--surface);border:1.5px solid var(--line);border-radius:var(--r);padding:10px 12px;cursor:pointer}
+.circuitos{grid-auto-rows:1fr}
+.circ{display:grid;gap:4px;align-content:start;height:100%;text-align:left;background:var(--surface);border:1.5px solid var(--line);border-radius:var(--r);padding:10px 12px;cursor:pointer}
 .circ:hover{border-color:var(--via-claro)}
 .circ[aria-checked="true"]{background:var(--via);border-color:var(--via);color:var(--via-ink)}
 .circ strong{font:600 16.5px/1.2 var(--f-rotulo)}
