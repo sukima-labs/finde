@@ -1,6 +1,6 @@
 # Finde
 
-**Escapadas de fin de semana desde Madrid, en coche o en tren y coche de alquiler** → <https://sukima-labs.github.io/finde/>
+**Escapadas de fin de semana desde Madrid, en coche o en tren y coche de alquiler** → <https://sukimalabs.com/finde/>
 
 Diecinueve circuitos de sábado a domingo, uno por región, que entre todos cubren la península sin
 repetir ciudad: salida el sábado por la mañana, una noche fuera y vuelta a Madrid el domingo por la
