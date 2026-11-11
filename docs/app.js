@@ -1,6 +1,8 @@
 // Finde — calcula el plan de sábado a domingo de un circuito (o de un recorrido propio) y lo pinta.
 // Todos los datos vienen de datos.json y catalogo.json (herramientas/construir.py); no hay llamadas fuera.
 const D = await (await fetch(new URL("datos.json", import.meta.url))).json();
+const IMG_RELIEVE = new URL("img/relieve.jpg", import.meta.url).href;  // capa de relieve, en el propio sitio
+let RELIEVE = true;
 const C = D.ciudades, CIRC = D.circuitos;
 const $ = s => document.querySelector(s);
 const EN = document.documentElement.lang === "en";
@@ -601,7 +603,10 @@ function pintarMapa(p) {
     const [x, y] = C[c].xy, i = o.indexOf(c);
     textos.push(rotulo(x, y, nom(c) + (p && c === p.n ? " ☾" : ""), (i >= 0 ? 10 : 5) * k, i >= 0 ? "rot" : "rot rot-fuera"));
   });
-  svg.innerHTML = s + marcas.join("") + textos.join("");
+  const relieve = RELIEVE
+    ? `<image href="${IMG_RELIEVE}" x="0" y="0" width="${D.mapa.ancho}" height="${D.mapa.alto}" class="relieve" preserveAspectRatio="none"/>`
+    : "";
+  svg.innerHTML = relieve + s + marcas.join("") + textos.join("");
 }
 
 // ---------- eventos ----------
@@ -658,6 +663,11 @@ $("#editar").addEventListener("click", () => {   // el circuito actual pasa a se
 });
 $("#ordenar").addEventListener("click", () => { S.sel = ordenMejor(S.sel); S.inv = false; S.t = S.m = null; pintar(); });
 $("#vaciar").addEventListener("click", () => { S = { ...base(PROPIO), tren: S.tren }; pintar(); });
+$("#btn-relieve").addEventListener("click", () => {
+  RELIEVE = !RELIEVE;
+  $("#btn-relieve").setAttribute("aria-pressed", String(RELIEVE));
+  pintar();
+});
 $("#estacion").addEventListener("change", ev => cambiaTren(ev.target.value));
 $("#buscar").addEventListener("input", () => pintarBuscador(plan(S)));
 $("#buscar").addEventListener("keydown", ev => {

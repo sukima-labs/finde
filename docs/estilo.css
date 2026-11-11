@@ -234,3 +234,9 @@ td.tarde{color:var(--mal);font-weight:600}
 .pie .como[open] summary::before{content:"▾ "}
 .pie .como[open]{border-top:1.5px solid var(--line);border-bottom:1.5px solid var(--line);padding:6px 0}
 .pie .sukima{margin:12px 0}
+
+/* Conmutador de relieve */
+.mapa-barra{display:flex;justify-content:flex-end;margin-bottom:4px}
+.mapa-barra button{font-size:12px;padding:3px 10px;border-radius:999px;border:1.5px solid var(--line);background:var(--surface);color:var(--muted);cursor:pointer}
+.mapa-barra button[aria-pressed="true"]{border-color:var(--via-claro);color:var(--via-claro)}
+.mapa svg .relieve{opacity:.5;mix-blend-mode:luminosity}
