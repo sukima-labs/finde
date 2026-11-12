@@ -67,7 +67,8 @@
     "btn_relieve": "relieve de España",
     "aria_zoom_mas": "Acercar el mapa",
     "aria_zoom_menos": "Alejar el mapa",
-    "btn_zoom_todo": "todo el mapa"
+    "btn_zoom_todo": "todo el mapa",
+    "btn_esquema": "solo rutas"
   },
   "en": {
     "lang": "en",
@@ -136,6 +137,7 @@
     "btn_relieve": "Spain relief",
     "aria_zoom_mas": "Zoom the map in",
     "aria_zoom_menos": "Zoom the map out",
-    "btn_zoom_todo": "whole map"
+    "btn_zoom_todo": "whole map",
+    "btn_esquema": "routes only"
   }
 }
