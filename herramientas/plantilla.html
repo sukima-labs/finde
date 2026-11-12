@@ -24,7 +24,7 @@
     <link rel="icon" href="{{raiz}}favicon_32.png?v=2" sizes="32x32" type="image/png">
     <link rel="apple-touch-icon" href="{{raiz}}apple-touch-icon.png?v=2">
 <link rel="preload" href="{{raiz}}datos.json" as="fetch" crossorigin>
-<link rel="stylesheet" href="{{raiz}}estilo.css?v=5">
+<link rel="stylesheet" href="{{raiz}}estilo.css?v=6">
 <script type="module" src="{{raiz}}app.js"></script>
 </head>
 <body>
@@ -53,7 +53,7 @@
 
   <section class="principal" aria-labelledby="t-viaje">
     <div class="col-mapa">
-      <div class="mapa-barra"><button id="btn-relieve" type="button" aria-pressed="true">{{btn_relieve}}</button><button id="btn-esquema" type="button" aria-pressed="false">{{btn_esquema}}</button><span class="sep"></span><button id="zoom-mas" type="button" aria-label="{{aria_zoom_mas}}">+</button><button id="zoom-menos" type="button" aria-label="{{aria_zoom_menos}}">−</button><button id="zoom-todo" type="button" class="todo">{{btn_zoom_todo}}</button></div>
+      <div class="mapa-barra"><button id="btn-relieve" type="button" aria-pressed="true">{{btn_relieve}}</button><button id="btn-esquema" type="button" aria-pressed="false">{{btn_esquema}}</button><button id="btn-lugares" type="button" aria-pressed="false">{{btn_lugares}}</button><span class="sep"></span><button id="zoom-mas" type="button" aria-label="{{aria_zoom_mas}}">+</button><button id="zoom-menos" type="button" aria-label="{{aria_zoom_menos}}">−</button><button id="zoom-todo" type="button" class="todo">{{btn_zoom_todo}}</button></div>
       <div class="mapa"><svg id="mapa" role="img" aria-label="{{aria_mapa}}"></svg></div>
       <div id="veredicto" class="veredicto" aria-live="polite"></div>
       <dl class="cifras" id="cifras"></dl>
@@ -131,7 +131,7 @@
       <p id="fuera"></p>
     </details>
     
-  <div class="sukima"><svg class="iso" width="24" height="24" viewBox="0 0 200 200" aria-hidden="true" focusable="false"><path d="M 18 174 L 18 38 L 180 14 L 180 174 L 160 174 L 160 39 L 38 57 L 38 174 Z" fill="#10131C"/><path d="M 52 170 L 52 80 L 142 59 L 142 79 L 72 96 L 72 170 Z" fill="#10131C"/><path d="M 96 167 L 96 109 L 143 93 L 143 173 Z" fill="#14C6D4"/></svg><p>{{sukima_contacto}}</p></div>
+  <div class="sukima"><svg class="iso" width="24" height="24" viewBox="0 0 200 200" aria-hidden="true" focusable="false"><path d="M 18 174 L 18 38 L 180 14 L 180 174 L 160 174 L 160 39 L 38 57 L 38 174 Z" fill="currentColor"/><path d="M 52 170 L 52 80 L 142 59 L 142 79 L 72 96 L 72 170 Z" fill="currentColor"/><path d="M 96 167 L 96 109 L 143 93 L 143 173 Z" fill="#14C6D4"/></svg><p>{{sukima_contacto}}</p></div>
     <p class="creditos">{{creditos}}</p>
   </footer>
 </div>

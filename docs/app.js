@@ -6,6 +6,7 @@ let RELIEVE = true;
 let ZOOM = 1, CEN = null;   // zoom manual: 1 = encuadre automático; CEN = centro en coords del lienzo
 let TODA = false;           // vista de toda España (el lienzo completo)
 let ESQUEMA = false;        // vista esquema: sin mapa de fondo, solo la ruta
+let LUGARES = false;        // puntos de los 196 lugares del catálogo sobre el mapa
 const C = D.ciudades, CIRC = D.circuitos;
 const $ = s => document.querySelector(s);
 const EN = document.documentElement.lang === "en";
@@ -618,9 +619,19 @@ function pintarMapa(p) {
   const relieve = RELIEVE
     ? `<image href="${IMG_RELIEVE}" x="0" y="0" width="${D.mapa.ancho}" height="${D.mapa.alto}" class="relieve" preserveAspectRatio="none"/>`
     : "";
-  const fondopaises = ESQUEMA ? "" : Object.entries(D.mapa.paises).map(([iso, d]) =>
-    `<path d="${d}" fill="var(${iso === "ESP" ? "--tierra" : "--tierra-otra"})" stroke="var(--borde)" stroke-width="${0.9 * k}" stroke-linejoin="round"/>`).join("");
-  svg.innerHTML = relieve + fondopaises + s + marcas.join("") + textos.join("");
+  const fondopaises = Object.entries(D.mapa.paises).map(([iso, d]) =>
+    `<path d="${d}" fill="${RELIEVE && !ESQUEMA ? "none" : `var(${iso === "ESP" ? "--tierra" : "--tierra-otra"})`}" stroke="var(--borde)" stroke-width="${0.9 * k}" stroke-linejoin="round"/>`).join("");
+  let sitios = "";
+  if (LUGARES && !ESQUEMA) {              // los 196 lugares como puntos; nombres al acercar
+    const enRuta = new Set(pool);
+    for (const [n, c] of Object.entries(C)) {
+      if (enRuta.has(n)) continue;
+      const [x, y] = c.xy;
+      sitios += `<circle cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="${2.2 * k}" class="lugar"/>`;
+      if (ZOOM >= 2) sitios += `<text x="${x.toFixed(1)}" y="${(y - 5 * k).toFixed(1)}" class="lugar-nom" font-size="${9 * k}">${nom(n)}</text>`;
+    }
+  }
+  svg.innerHTML = relieve + fondopaises + s + sitios + marcas.join("") + textos.join("");
 }
 
 // ---------- eventos ----------
@@ -700,6 +711,11 @@ $("#zoom-todo").addEventListener("click", () => {
 $("#btn-esquema").addEventListener("click", () => {
   ESQUEMA = !ESQUEMA;
   $("#btn-esquema").setAttribute("aria-pressed", String(ESQUEMA));
+  pintar();
+});
+$("#btn-lugares").addEventListener("click", () => {
+  LUGARES = !LUGARES;
+  $("#btn-lugares").setAttribute("aria-pressed", String(LUGARES));
   pintar();
 });
 $("#estacion").addEventListener("change", ev => cambiaTren(ev.target.value));

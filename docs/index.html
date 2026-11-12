@@ -24,7 +24,7 @@
     <link rel="icon" href="favicon_32.png?v=2" sizes="32x32" type="image/png">
     <link rel="apple-touch-icon" href="apple-touch-icon.png?v=2">
 <link rel="preload" href="datos.json" as="fetch" crossorigin>
-<link rel="stylesheet" href="estilo.css?v=5">
+<link rel="stylesheet" href="estilo.css?v=6">
 <script type="module" src="app.js"></script>
 </head>
 <body>
@@ -53,7 +53,7 @@
 
   <section class="principal" aria-labelledby="t-viaje">
     <div class="col-mapa">
-      <div class="mapa-barra"><button id="btn-relieve" type="button" aria-pressed="true">relieve de España</button><button id="btn-esquema" type="button" aria-pressed="false">solo rutas</button><span class="sep"></span><button id="zoom-mas" type="button" aria-label="Acercar el mapa">+</button><button id="zoom-menos" type="button" aria-label="Alejar el mapa">−</button><button id="zoom-todo" type="button" class="todo">todo el mapa</button></div>
+      <div class="mapa-barra"><button id="btn-relieve" type="button" aria-pressed="true">relieve de España</button><button id="btn-esquema" type="button" aria-pressed="false">solo rutas</button><button id="btn-lugares" type="button" aria-pressed="false">ciudades</button><span class="sep"></span><button id="zoom-mas" type="button" aria-label="Acercar el mapa">+</button><button id="zoom-menos" type="button" aria-label="Alejar el mapa">−</button><button id="zoom-todo" type="button" class="todo">todo el mapa</button></div>
       <div class="mapa"><svg id="mapa" role="img" aria-label="Mapa del recorrido"></svg></div>
       <div id="veredicto" class="veredicto" aria-live="polite"></div>
       <dl class="cifras" id="cifras"></dl>
@@ -131,7 +131,7 @@
       <p id="fuera"></p>
     </details>
     
-  <div class="sukima"><svg class="iso" width="24" height="24" viewBox="0 0 200 200" aria-hidden="true" focusable="false"><path d="M 18 174 L 18 38 L 180 14 L 180 174 L 160 174 L 160 39 L 38 57 L 38 174 Z" fill="#10131C"/><path d="M 52 170 L 52 80 L 142 59 L 142 79 L 72 96 L 72 170 Z" fill="#10131C"/><path d="M 96 167 L 96 109 L 143 93 L 143 173 Z" fill="#14C6D4"/></svg><p>Un proyecto de <a href="https://sukimalabs.com">Sukima Labs</a> — <a href="mailto:hola@sukimalabs.com">hola@sukimalabs.com</a> para felicitarnos o hablar con los fundadores · <a href="mailto:info@sukimalabs.com">info@sukimalabs.com</a> para preguntas, quejas y asuntos administrativos.</p></div>
+  <div class="sukima"><svg class="iso" width="24" height="24" viewBox="0 0 200 200" aria-hidden="true" focusable="false"><path d="M 18 174 L 18 38 L 180 14 L 180 174 L 160 174 L 160 39 L 38 57 L 38 174 Z" fill="currentColor"/><path d="M 52 170 L 52 80 L 142 59 L 142 79 L 72 96 L 72 170 Z" fill="currentColor"/><path d="M 96 167 L 96 109 L 143 93 L 143 173 Z" fill="#14C6D4"/></svg><p>Un proyecto de <a href="https://sukimalabs.com">Sukima Labs</a> — <a href="mailto:hola@sukimalabs.com">hola@sukimalabs.com</a> para felicitarnos o hablar con los fundadores · <a href="mailto:info@sukimalabs.com">info@sukimalabs.com</a> para preguntas, quejas y asuntos administrativos.</p></div>
     <p class="creditos">Datos de carreteras © colaboradores de <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>, rutas con <a href="https://valhalla.github.io/valhalla/">Valhalla</a> (servidor de FOSSGIS), centros urbanos de <a href="https://www.wikidata.org">Wikidata</a>, contorno de <a href="https://www.naturalearthdata.com">Natural Earth</a>, horarios de tren de <a href="https://data.renfe.com">Renfe</a> (datos abiertos). Esta página no usa cookies ni analítica y no hace ninguna llamada fuera de este sitio. <span id="generado"></span> · <a href="https://github.com/sukima-labs/finde">Código y datos</a> · Hecho por <a href="https://github.com/sukima-labs">sukima-labs</a>.</p>
   </footer>
 </div>

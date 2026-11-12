@@ -250,3 +250,20 @@ td.tarde{color:var(--mal);font-weight:600}
 .mapa-barra{gap:6px;align-items:center}
 .mapa-barra .sep{flex:1}
 .mapa-barra #zoom-mas,.mapa-barra #zoom-menos{width:28px;padding:3px 0;font-size:15px;line-height:1.4;border-radius:999px}
+
+/* Puntos de lugares del catálogo */
+.mapa .lugar{fill:var(--via-claro);opacity:.5}
+.mapa .lugar-nom{fill:var(--ink);opacity:.8;font-weight:600;paint-order:stroke;stroke:var(--bg);stroke-width:2px;stroke-linejoin:round}
+
+/* Guiño de familia Tron: la malla de la portada solo en la banda del pie,
+   donde no hay contenido denso (decisión de Jeisson tras evaluación). */
+.pie{isolation:isolate;position:relative}
+.pie::before{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;
+  background:
+    linear-gradient(rgba(16,19,28,.05) 1px,transparent 1px) 0 0/44px 44px,
+    linear-gradient(90deg,rgba(16,19,28,.05) 1px,transparent 1px) 0 0/44px 44px,
+    radial-gradient(60% 90% at 50% 0%,rgba(113,72,245,.10),transparent 70%)}
+@media (prefers-color-scheme:dark){.pie::before{background:
+  linear-gradient(rgba(245,244,240,.05) 1px,transparent 1px) 0 0/44px 44px,
+  linear-gradient(90deg,rgba(245,244,240,.05) 1px,transparent 1px) 0 0/44px 44px,
+  radial-gradient(60% 90% at 50% 0%,rgba(113,72,245,.14),transparent 70%)}}
