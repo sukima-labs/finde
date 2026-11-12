@@ -5,6 +5,7 @@ const IMG_RELIEVE = new URL("img/relieve.png", import.meta.url).href;  // capa d
 let RELIEVE = true;
 let ZOOM = 1, CEN = null;   // zoom manual: 1 = encuadre automático; CEN = centro en coords del lienzo
 let TODA = false;           // vista de toda España (el lienzo completo)
+let ESQUEMA = false;        // vista esquema: sin mapa de fondo, solo la ruta
 const C = D.ciudades, CIRC = D.circuitos;
 const $ = s => document.querySelector(s);
 const EN = document.documentElement.lang === "en";
@@ -572,8 +573,6 @@ function pintarMapa(p) {
   const svg = $("#mapa");
   svg.setAttribute("viewBox", `${vx.toFixed(1)} ${vy.toFixed(1)} ${w.toFixed(1)} ${h.toFixed(1)}`);
   let s = "";
-  for (const [iso, d] of Object.entries(D.mapa.paises))
-    s += `<path d="${d}" fill="var(${iso === "ESP" ? "--tierra" : "--tierra-otra"})" stroke="var(--borde)" stroke-width="${0.9 * k}" stroke-linejoin="round"/>`;
   const linea = piernas.map(t => `<polyline points="${t.map(q => q.join(",")).join(" ")}"/>`).join("");
   if (S.tren) {
     const [ex, ey] = C[S.tren].xy;
@@ -619,7 +618,9 @@ function pintarMapa(p) {
   const relieve = RELIEVE
     ? `<image href="${IMG_RELIEVE}" x="0" y="0" width="${D.mapa.ancho}" height="${D.mapa.alto}" class="relieve" preserveAspectRatio="none"/>`
     : "";
-  svg.innerHTML = relieve + s + marcas.join("") + textos.join("");
+  const fondopaises = ESQUEMA ? "" : Object.entries(D.mapa.paises).map(([iso, d]) =>
+    `<path d="${d}" fill="var(${iso === "ESP" ? "--tierra" : "--tierra-otra"})" stroke="var(--borde)" stroke-width="${0.9 * k}" stroke-linejoin="round"/>`).join("");
+  svg.innerHTML = relieve + fondopaises + s + marcas.join("") + textos.join("");
 }
 
 // ---------- eventos ----------
@@ -694,6 +695,11 @@ $("#zoom-menos").addEventListener("click", () => zoomMapa(1 / 1.5));
 $("#zoom-todo").addEventListener("click", () => {
   TODA = !TODA; ZOOM = 1; CEN = null;
   $("#zoom-todo").setAttribute("aria-pressed", String(TODA));
+  pintar();
+});
+$("#btn-esquema").addEventListener("click", () => {
+  ESQUEMA = !ESQUEMA;
+  $("#btn-esquema").setAttribute("aria-pressed", String(ESQUEMA));
   pintar();
 });
 $("#estacion").addEventListener("change", ev => cambiaTren(ev.target.value));
