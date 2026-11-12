@@ -39,7 +39,8 @@ h1{font:500 clamp(30px,5vw,46px)/1.1 var(--f-rotulo);margin:0;letter-spacing:-.0
 
 /* Circuitos */
 .circuitos{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(230px,calc(50% - 5px)),1fr));gap:10px}
-.circ{display:grid;gap:4px;text-align:left;background:var(--surface);border:1.5px solid var(--line);border-radius:var(--r);padding:10px 12px;cursor:pointer}
+.circuitos{grid-auto-rows:1fr}
+.circ{display:grid;gap:4px;align-content:start;height:100%;text-align:left;background:var(--surface);border:1.5px solid var(--line);border-radius:var(--r);padding:10px 12px;cursor:pointer}
 .circ:hover{border-color:var(--via-claro)}
 .circ[aria-checked="true"]{background:var(--via);border-color:var(--via);color:var(--via-ink)}
 .circ strong{font:600 16.5px/1.2 var(--f-rotulo)}
@@ -224,3 +225,18 @@ td.tarde{color:var(--mal);font-weight:600}
 
 /* Isotipo de marca en la cabecera (adaptado al tema por currentColor) */
 .marca .iso{width:22px;height:22px;vertical-align:-4px;margin-right:8px}
+
+/* Desplegable de cómo funciona */
+.pie .como{margin:8px 0}
+.pie .como summary{cursor:pointer;color:var(--via-claro);font-size:13.5px;text-decoration:underline;text-underline-offset:3px;list-style:none}
+.pie .como summary::-webkit-details-marker{display:none}
+.pie .como summary::before{content:"▸ "}
+.pie .como[open] summary::before{content:"▾ "}
+.pie .como[open]{border-top:1.5px solid var(--line);border-bottom:1.5px solid var(--line);padding:6px 0}
+.pie .sukima{margin:12px 0}
+
+/* Conmutador de relieve */
+.mapa-barra{display:flex;justify-content:flex-end;margin-bottom:4px}
+.mapa-barra button{font-size:12px;padding:3px 10px;border-radius:999px;border:1.5px solid var(--line);background:var(--surface);color:var(--muted);cursor:pointer}
+.mapa-barra button[aria-pressed="true"]{border-color:var(--via-claro);color:var(--via-claro)}
+.mapa svg .relieve{opacity:.5;mix-blend-mode:luminosity}

@@ -62,7 +62,9 @@
     "modo_coche": "🚗 En coche desde Madrid",
     "modo_tren": "🚄 Tren + coche de alquiler",
     "estacion": "Tren hasta",
-    "sukima_contacto": "Un proyecto de <a href=\"https://sukimalabs.com\">Sukima Labs</a> — <a href=\"mailto:hola@sukimalabs.com\">hola@sukimalabs.com</a> para felicitarnos o hablar con los fundadores · <a href=\"mailto:info@sukimalabs.com\">info@sukimalabs.com</a> para preguntas, quejas y asuntos administrativos."
+    "sukima_contacto": "Un proyecto de <a href=\"https://sukimalabs.com\">Sukima Labs</a> — <a href=\"mailto:hola@sukimalabs.com\">hola@sukimalabs.com</a> para felicitarnos o hablar con los fundadores · <a href=\"mailto:info@sukimalabs.com\">info@sukimalabs.com</a> para preguntas, quejas y asuntos administrativos.",
+    "pie_como_label": "cómo funciona: cálculo, peajes, combustible y tren",
+    "btn_relieve": "relieve de España"
   },
   "en": {
     "lang": "en",
@@ -126,6 +128,8 @@
     "modo_coche": "🚗 By car from Madrid",
     "modo_tren": "🚄 Train + hire car",
     "estacion": "Train to",
-    "sukima_contacto": "A project by <a href=\"https://sukimalabs.com\">Sukima Labs</a> — <a href=\"mailto:hola@sukimalabs.com\">hola@sukimalabs.com</a> to congratulate us or reach the founders · <a href=\"mailto:info@sukimalabs.com\">info@sukimalabs.com</a> for questions, complaints and administrative matters."
+    "sukima_contacto": "A project by <a href=\"https://sukimalabs.com\">Sukima Labs</a> — <a href=\"mailto:hola@sukimalabs.com\">hola@sukimalabs.com</a> to congratulate us or reach the founders · <a href=\"mailto:info@sukimalabs.com\">info@sukimalabs.com</a> for questions, complaints and administrative matters.",
+    "pie_como_label": "how it works: calculation, tolls, fuel and train",
+    "btn_relieve": "Spain relief"
   }
 }

@@ -22,7 +22,7 @@
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="preload" href="datos.json" as="fetch" crossorigin>
-<link rel="stylesheet" href="estilo.css">
+<link rel="stylesheet" href="estilo.css?v=3">
 <script type="module" src="app.js"></script>
 </head>
 <body>
@@ -30,7 +30,7 @@
 <div class="wrap">
   <header class="cab">
     <div>
-      <p class="marca"><svg class="iso" viewBox="0 0 200 200" aria-hidden="true" focusable="false"><path d="M 18 174 L 18 38 L 180 14 L 180 174 L 160 174 L 160 39 L 38 57 L 38 174 Z" fill="currentColor"/><path d="M 52 170 L 52 80 L 142 59 L 142 79 L 72 96 L 72 170 Z" fill="currentColor"/><path d="M 96 167 L 96 109 L 143 93 L 143 173 Z" fill="#14C6D4"/></svg> <a href="https://sukimalabs.com" class="jl">Finde · Sukima Labs</a>
+      <p class="marca"><svg class="iso" width="22" height="22" viewBox="0 0 200 200" aria-hidden="true" focusable="false"><path d="M 18 174 L 18 38 L 180 14 L 180 174 L 160 174 L 160 39 L 38 57 L 38 174 Z" fill="currentColor"/><path d="M 52 170 L 52 80 L 142 59 L 142 79 L 72 96 L 72 170 Z" fill="currentColor"/><path d="M 96 167 L 96 109 L 143 93 L 143 173 Z" fill="#14C6D4"/></svg> <a href="https://sukimalabs.com" class="jl">Finde · Sukima Labs</a>
         <a href="en/" class="idioma" id="idioma" hreflang="en" lang="en">English</a></p>
       <p class="kicker">Escapadas de sábado a domingo, en coche o en tren</p>
       <h1>Conoce casi toda España desde Madrid, un fin de semana cada vez</h1>
@@ -51,6 +51,7 @@
 
   <section class="principal" aria-labelledby="t-viaje">
     <div class="col-mapa">
+      <div class="mapa-barra"><button id="btn-relieve" type="button" aria-pressed="true">relieve de España</button></div>
       <div class="mapa"><svg id="mapa" role="img" aria-label="Mapa del recorrido"></svg></div>
       <div id="veredicto" class="veredicto" aria-live="polite"></div>
       <dl class="cifras" id="cifras"></dl>
@@ -119,13 +120,16 @@
   </section>
 
   <footer class="pie" id="pie">
-    <p><strong>Cómo se calcula.</strong> Los tiempos de conducción salen del calculador de rutas Valhalla sobre el mapa de OpenStreetMap, sin tráfico. A cada tramo se le suman 15 min para entrar en la ciudad y aparcar, y 15 min más por cada 2 h seguidas al volante, para descansar como recomienda la DGT. El tiempo de cada ciudad lo pones tú; el que viene marcado es lo que suele llevar ver lo esencial a pie. En la ciudad donde duermes, ese tiempo se reparte entre la tarde del sábado y la mañana del domingo.</p>
-    <p><strong>Peajes.</strong> Se marcan los kilómetros por tramos de peaje según OpenStreetMap, y cuánto tiempo cuesta evitarlos; el importe no se calcula porque depende del tramo y la hora. Con «Evitar peajes» todo el plan se recalcula por la alternativa gratuita.</p>
-    <p id="pie-combustible"></p>
-    <p id="pie-tren"></p>
-    <p id="fuera"></p>
+    <details class="como">
+      <summary>cómo funciona: cálculo, peajes, combustible y tren</summary>
+      <p><strong>Cómo se calcula.</strong> Los tiempos de conducción salen del calculador de rutas Valhalla sobre el mapa de OpenStreetMap, sin tráfico. A cada tramo se le suman 15 min para entrar en la ciudad y aparcar, y 15 min más por cada 2 h seguidas al volante, para descansar como recomienda la DGT. El tiempo de cada ciudad lo pones tú; el que viene marcado es lo que suele llevar ver lo esencial a pie. En la ciudad donde duermes, ese tiempo se reparte entre la tarde del sábado y la mañana del domingo.</p>
+      <p><strong>Peajes.</strong> Se marcan los kilómetros por tramos de peaje según OpenStreetMap, y cuánto tiempo cuesta evitarlos; el importe no se calcula porque depende del tramo y la hora. Con «Evitar peajes» todo el plan se recalcula por la alternativa gratuita.</p>
+      <p id="pie-combustible"></p>
+      <p id="pie-tren"></p>
+      <p id="fuera"></p>
+    </details>
     
-  <div class="sukima"><svg class="iso" viewBox="0 0 200 200" aria-hidden="true" focusable="false"><path d="M 18 174 L 18 38 L 180 14 L 180 174 L 160 174 L 160 39 L 38 57 L 38 174 Z" fill="#10131C"/><path d="M 52 170 L 52 80 L 142 59 L 142 79 L 72 96 L 72 170 Z" fill="#10131C"/><path d="M 96 167 L 96 109 L 143 93 L 143 173 Z" fill="#14C6D4"/></svg><p>Un proyecto de &lt;a href=&quot;https://sukimalabs.com&quot;&gt;Sukima Labs&lt;/a&gt; — &lt;a href=&quot;mailto:hola@sukimalabs.com&quot;&gt;hola@sukimalabs.com&lt;/a&gt; para felicitarnos o hablar con los fundadores · &lt;a href=&quot;mailto:info@sukimalabs.com&quot;&gt;info@sukimalabs.com&lt;/a&gt; para preguntas, quejas y asuntos administrativos.</p></div>
+  <div class="sukima"><svg class="iso" width="24" height="24" viewBox="0 0 200 200" aria-hidden="true" focusable="false"><path d="M 18 174 L 18 38 L 180 14 L 180 174 L 160 174 L 160 39 L 38 57 L 38 174 Z" fill="#10131C"/><path d="M 52 170 L 52 80 L 142 59 L 142 79 L 72 96 L 72 170 Z" fill="#10131C"/><path d="M 96 167 L 96 109 L 143 93 L 143 173 Z" fill="#14C6D4"/></svg><p>Un proyecto de <a href="https://sukimalabs.com">Sukima Labs</a> — <a href="mailto:hola@sukimalabs.com">hola@sukimalabs.com</a> para felicitarnos o hablar con los fundadores · <a href="mailto:info@sukimalabs.com">info@sukimalabs.com</a> para preguntas, quejas y asuntos administrativos.</p></div>
     <p class="creditos">Datos de carreteras © colaboradores de <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>, rutas con <a href="https://valhalla.github.io/valhalla/">Valhalla</a> (servidor de FOSSGIS), centros urbanos de <a href="https://www.wikidata.org">Wikidata</a>, contorno de <a href="https://www.naturalearthdata.com">Natural Earth</a>, horarios de tren de <a href="https://data.renfe.com">Renfe</a> (datos abiertos). Esta página no usa cookies ni analítica y no hace ninguna llamada fuera de este sitio. <span id="generado"></span> · <a href="https://github.com/sukima-labs/finde">Código y datos</a> · Hecho por <a href="https://github.com/sukima-labs">sukima-labs</a>.</p>
   </footer>
 </div>
