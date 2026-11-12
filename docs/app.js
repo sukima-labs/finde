@@ -1,9 +1,10 @@
 // Finde — calcula el plan de sábado a domingo de un circuito (o de un recorrido propio) y lo pinta.
 // Todos los datos vienen de datos.json y catalogo.json (herramientas/construir.py); no hay llamadas fuera.
 const D = await (await fetch(new URL("datos.json", import.meta.url))).json();
-const IMG_RELIEVE = new URL("img/relieve.jpg", import.meta.url).href;  // capa de relieve, en el propio sitio
+const IMG_RELIEVE = new URL("img/relieve.png", import.meta.url).href;  // capa de relieve, en el propio sitio
 let RELIEVE = true;
 let ZOOM = 1, CEN = null;   // zoom manual: 1 = encuadre automático; CEN = centro en coords del lienzo
+let TODA = false;           // vista de toda España (el lienzo completo)
 const C = D.ciudades, CIRC = D.circuitos;
 const $ = s => document.querySelector(s);
 const EN = document.documentElement.lang === "en";
@@ -565,6 +566,9 @@ function pintarMapa(p) {
     CEN = { x: nx, y: ny };
     vx = nx - w / 2; vy = ny - h / 2;
   }
+  if (TODA) {                           // vista de toda España: el lienzo completo
+    w = D.mapa.ancho; h = D.mapa.alto; vx = 0; vy = 0;
+  }
   const svg = $("#mapa");
   svg.setAttribute("viewBox", `${vx.toFixed(1)} ${vy.toFixed(1)} ${w.toFixed(1)} ${h.toFixed(1)}`);
   let s = "";
@@ -678,6 +682,7 @@ $("#btn-relieve").addEventListener("click", () => {
   pintar();
 });
 function zoomMapa(f) {                  // acerca/aleja alrededor del centro de la vista actual
+  if (TODA) { TODA = false; $("#zoom-todo").setAttribute("aria-pressed", "false"); }
   const vb = $("#mapa").viewBox.baseVal;
   CEN = { x: vb.x + vb.width / 2, y: vb.y + vb.height / 2 };
   ZOOM = Math.min(8, Math.max(1, ZOOM * f));
@@ -686,7 +691,11 @@ function zoomMapa(f) {                  // acerca/aleja alrededor del centro de 
 }
 $("#zoom-mas").addEventListener("click", () => zoomMapa(1.5));
 $("#zoom-menos").addEventListener("click", () => zoomMapa(1 / 1.5));
-$("#zoom-todo").addEventListener("click", () => { ZOOM = 1; CEN = null; pintar(); });
+$("#zoom-todo").addEventListener("click", () => {
+  TODA = !TODA; ZOOM = 1; CEN = null;
+  $("#zoom-todo").setAttribute("aria-pressed", String(TODA));
+  pintar();
+});
 $("#estacion").addEventListener("change", ev => cambiaTren(ev.target.value));
 $("#buscar").addEventListener("input", () => pintarBuscador(plan(S)));
 $("#buscar").addEventListener("keydown", ev => {
