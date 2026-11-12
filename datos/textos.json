@@ -68,7 +68,8 @@
     "aria_zoom_mas": "Acercar el mapa",
     "aria_zoom_menos": "Alejar el mapa",
     "btn_zoom_todo": "todo el mapa",
-    "btn_esquema": "solo rutas"
+    "btn_esquema": "solo rutas",
+    "btn_lugares": "ciudades"
   },
   "en": {
     "lang": "en",
@@ -138,6 +139,7 @@
     "aria_zoom_mas": "Zoom the map in",
     "aria_zoom_menos": "Zoom the map out",
     "btn_zoom_todo": "whole map",
-    "btn_esquema": "routes only"
+    "btn_esquema": "routes only",
+    "btn_lugares": "towns"
   }
 }

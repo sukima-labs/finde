@@ -250,3 +250,7 @@ td.tarde{color:var(--mal);font-weight:600}
 .mapa-barra{gap:6px;align-items:center}
 .mapa-barra .sep{flex:1}
 .mapa-barra #zoom-mas,.mapa-barra #zoom-menos{width:28px;padding:3px 0;font-size:15px;line-height:1.4;border-radius:999px}
+
+/* Puntos de lugares del catálogo */
+.mapa .lugar{fill:var(--via-claro);opacity:.5}
+.mapa .lugar-nom{fill:var(--ink);opacity:.8;font-weight:600;paint-order:stroke;stroke:var(--bg);stroke-width:2px;stroke-linejoin:round}
