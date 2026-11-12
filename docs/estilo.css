@@ -240,3 +240,8 @@ td.tarde{color:var(--mal);font-weight:600}
 .mapa-barra button{font-size:12px;padding:3px 10px;border-radius:999px;border:1.5px solid var(--line);background:var(--surface);color:var(--muted);cursor:pointer}
 .mapa-barra button[aria-pressed="true"]{border-color:var(--via-claro);color:var(--via-claro)}
 .mapa svg .relieve{opacity:.5;mix-blend-mode:luminosity}
+
+/* Botones de zoom del mapa */
+.mapa-barra{gap:6px;align-items:center}
+.mapa-barra .sep{flex:1}
+.mapa-barra #zoom-mas,.mapa-barra #zoom-menos{width:28px;padding:3px 0;font-size:15px;line-height:1.4;border-radius:999px}
