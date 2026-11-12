@@ -3,6 +3,7 @@
 const D = await (await fetch(new URL("datos.json", import.meta.url))).json();
 const IMG_RELIEVE = new URL("img/relieve.jpg", import.meta.url).href;  // capa de relieve, en el propio sitio
 let RELIEVE = true;
+let ZOOM = 1, CEN = null;   // zoom manual: 1 = encuadre automático; CEN = centro en coords del lienzo
 const C = D.ciudades, CIRC = D.circuitos;
 const $ = s => document.querySelector(s);
 const EN = document.documentElement.lang === "en";
@@ -554,8 +555,16 @@ function pintarMapa(p) {
   const ratio = 1.15, pad = 0.18;
   let w = Math.max(x1 - x0, 140) * (1 + 2 * pad), h = Math.max(y1 - y0, 120) * (1 + 2 * pad);
   if (w / h < ratio) w = h * ratio; else h = w / ratio;
-  const cx = (x0 + x1) / 2, cy = (y0 + y1) / 2, vx = cx - w / 2, vy = cy - h / 2;
+  let cx = (x0 + x1) / 2, cy = (y0 + y1) / 2, vx = cx - w / 2, vy = cy - h / 2;
   const k = w / 420; // escala de trazos y letras
+  if (ZOOM > 1) {                       // encuadre manual: más cerca, sin salirse del lienzo
+    w /= ZOOM; h /= ZOOM;
+    const c = CEN || { x: cx, y: cy };
+    const nx = Math.min(Math.max(c.x, w / 2), D.mapa.ancho - w / 2);
+    const ny = Math.min(Math.max(c.y, h / 2), D.mapa.alto - h / 2);
+    CEN = { x: nx, y: ny };
+    vx = nx - w / 2; vy = ny - h / 2;
+  }
   const svg = $("#mapa");
   svg.setAttribute("viewBox", `${vx.toFixed(1)} ${vy.toFixed(1)} ${w.toFixed(1)} ${h.toFixed(1)}`);
   let s = "";
@@ -668,6 +677,16 @@ $("#btn-relieve").addEventListener("click", () => {
   $("#btn-relieve").setAttribute("aria-pressed", String(RELIEVE));
   pintar();
 });
+function zoomMapa(f) {                  // acerca/aleja alrededor del centro de la vista actual
+  const vb = $("#mapa").viewBox.baseVal;
+  CEN = { x: vb.x + vb.width / 2, y: vb.y + vb.height / 2 };
+  ZOOM = Math.min(8, Math.max(1, ZOOM * f));
+  if (ZOOM === 1) CEN = null;
+  pintar();
+}
+$("#zoom-mas").addEventListener("click", () => zoomMapa(1.5));
+$("#zoom-menos").addEventListener("click", () => zoomMapa(1 / 1.5));
+$("#zoom-todo").addEventListener("click", () => { ZOOM = 1; CEN = null; pintar(); });
 $("#estacion").addEventListener("change", ev => cambiaTren(ev.target.value));
 $("#buscar").addEventListener("input", () => pintarBuscador(plan(S)));
 $("#buscar").addEventListener("keydown", ev => {

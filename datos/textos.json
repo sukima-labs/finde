@@ -64,7 +64,10 @@
     "estacion": "Tren hasta",
     "sukima_contacto": "Un proyecto de <a href=\"https://sukimalabs.com\">Sukima Labs</a> — <a href=\"mailto:hola@sukimalabs.com\">hola@sukimalabs.com</a> para felicitarnos o hablar con los fundadores · <a href=\"mailto:info@sukimalabs.com\">info@sukimalabs.com</a> para preguntas, quejas y asuntos administrativos.",
     "pie_como_label": "cómo funciona: cálculo, peajes, combustible y tren",
-    "btn_relieve": "relieve de España"
+    "btn_relieve": "relieve de España",
+    "aria_zoom_mas": "Acercar el mapa",
+    "aria_zoom_menos": "Alejar el mapa",
+    "btn_zoom_todo": "todo el mapa"
   },
   "en": {
     "lang": "en",
@@ -130,6 +133,9 @@
     "estacion": "Train to",
     "sukima_contacto": "A project by <a href=\"https://sukimalabs.com\">Sukima Labs</a> — <a href=\"mailto:hola@sukimalabs.com\">hola@sukimalabs.com</a> to congratulate us or reach the founders · <a href=\"mailto:info@sukimalabs.com\">info@sukimalabs.com</a> for questions, complaints and administrative matters.",
     "pie_como_label": "how it works: calculation, tolls, fuel and train",
-    "btn_relieve": "Spain relief"
+    "btn_relieve": "Spain relief",
+    "aria_zoom_mas": "Zoom the map in",
+    "aria_zoom_menos": "Zoom the map out",
+    "btn_zoom_todo": "whole map"
   }
 }
